@@ -1,17 +1,20 @@
 import React, { useEffect } from "react";
 import "./App.css";
 
-// const url = "https://mellow-florentine-74b2ce.netlify.app";
+declare namespace TelegramGameProxy {
+  function shareScore(): any;
+  function receiveEvent(type: string, data: string): any;
+}
 
 function App() {
-  const handleFullscreen = () => {
-    document.documentElement.requestFullscreen();
+  console.log(123123, TelegramGameProxy);
+  const sendEvent = () => {
+    TelegramGameProxy.receiveEvent("test1", "123123123");
   };
-
   return (
     <div className="App">
       <h1>TG HTML5 GAME</h1>
-      <button onClick={handleFullscreen}>Fullscreen</button>
+      <button onClick={sendEvent}>Fullscreen</button>
     </div>
   );
 }
