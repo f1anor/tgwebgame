@@ -4,12 +4,14 @@ import "./App.css";
 declare namespace TelegramGameProxy {
   function shareScore(): any;
   function receiveEvent(type: string, data: string): any;
+  function shareScore(): any;
 }
 
 function App() {
   console.log(123123, TelegramGameProxy);
   const sendEvent = () => {
-    TelegramGameProxy.receiveEvent("test1", "123123123");
+    console.log(1223);
+    TelegramGameProxy.shareScore();
   };
   return (
     <div className="App">
